@@ -26,10 +26,9 @@ router.post("/", async (req, res) => {
       ...db,
       projects,
     });
+    res.status(201).json(project);
   } catch (err) {
     return res.status(500).end();
   }
-
-  res.status(201).json(project);
 });
 module.exports = router;
